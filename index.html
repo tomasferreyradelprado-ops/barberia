@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilos.css">
+    <title>Barbería Don Juan</title>
+  </head>
+  <body>
+
+    <nav>
+      <span>Don Juan</span>
+      <a href="#servicios">Servicios</a>
+      <a href="#turnos">Turnos</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+
+    <section id="hero">
+      <h1>La barbería de tu barrio</h1>
+      <p>Cortes clásicos y modernos. Villa Crespo, Buenos Aires.</p>
+      <a href="#turnos" class="boton">Sacar turno</a>
+    </section>
+
+    <section id="servicios">
+      <h2>Servicios</h2>
+      <div class="grilla">
+        <div class="tarjeta">
+          <h3>Corte de pelo</h3>
+          <p>Tijera o máquina, el estilo que quieras.</p>
+          <span class="precio">$5.000</span>
+        </div>
+        <div class="tarjeta">
+          <h3>Barba</h3>
+          <p>Perfilado y arreglo con navaja.</p>
+          <span class="precio">$3.500</span>
+        </div>
+        <div class="tarjeta">
+          <h3>Corte + Barba</h3>
+          <p>El combo completo.</p>
+          <span class="precio">$7.500</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="turnos">
+      <h2>Sacar turno</h2>
+      <div class="tarjeta">
+  <input type="text" id="nombre" placeholder="Tu nombre">
+  <input type="tel" id="telefono" placeholder="Tu teléfono">
+  <select id="servicio">
+    <option value="">Elegí un servicio</option>
+    <option value="corte">Corte de pelo - $5.000</option>
+    <option value="barba">Barba - $3.500</option>
+    <option value="combo">Corte + Barba - $7.500</option>
+  </select>
+  <select id="peluquero">
+    <option value="">Elegí un peluquero</option>
+    <option value="juan">Juan</option>
+    <option value="marcos">Marcos</option>
+    <option value="cualquiera">Sin preferencia</option>
+  </select>
+  <input type="date" id="fecha">
+  <select id="horario">
+    <option value="">Elegí un horario</option>
+    <option value="09:00">09:00</option>
+    <option value="10:00">10:00</option>
+    <option value="11:00">11:00</option>
+    <option value="12:00">12:00</option>
+    <option value="14:00">14:00</option>
+    <option value="15:00">15:00</option>
+    <option value="16:00">16:00</option>
+    <option value="17:00">17:00</option>
+    <option value="18:00">18:00</option>
+    <option value="19:00">19:00</option>
+  </select>
+  <button id="boton">Reservar turno</button>
+</div>
+        <button id="boton">Reservar turno</button>
+      </div>
+    </section>
+
+    <section id="contacto">
+      <h2>Contacto</h2>
+      <p>📍 Av. Corrientes 1234, Villa Crespo</p>
+      <p>📞 011-4567-8900</p>
+      <p>🕐 Lunes a Sábado 9:00 - 20:00</p>
+    </section>
+<script>
+  window.onload = function() {
+    document.getElementById("boton").addEventListener("click", function() {
+      let nombre = document.getElementById("nombre").value;
+      let telefono = document.getElementById("telefono").value;
+      let servicio = document.getElementById("servicio").value;
+      let peluquero = document.getElementById("peluquero").value;
+      let fecha = document.getElementById("fecha").value;
+      let horario = document.getElementById("horario").value;
+
+      if (nombre === "" || telefono === "" || servicio === "" || peluquero === "" || fecha === "" || horario === "") {
+        alert("Por favor completá todos los campos.");
+        return;
+      }
+
+      alert("¡Turno reservado, " + nombre + "!\n\nServicio: " + servicio + "\nPeluquero: " + peluquero + "\nFecha: " + fecha + "\nHorario: " + horario + "\n\nTe confirmamos al " + telefono + ".");
+    });
+  }
+</script>
+  </body>
+</html>
